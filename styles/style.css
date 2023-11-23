@@ -9,7 +9,10 @@ html {
 }
 
 .page {
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
@@ -171,14 +174,14 @@ input[type="checkbox"]:checked+span {
   height: 34px;
   border: 1px solid #FFF;
   color: #FFF;
+  font-family: Fira Sans Condensed;
+  font-weight: 700;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
   text-align: center;
   background-color: transparent;
   cursor: pointer;
-  font-family: Fira Sans Condensed;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
 }
 
 .button:focus {
