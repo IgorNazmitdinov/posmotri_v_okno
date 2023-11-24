@@ -45,8 +45,7 @@ ol {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 30px;
-  padding: 133px 30px;
-  min-inline-size: 1140px;
+  max-inline-size: 1140px;
 }
 
 .result {
@@ -63,6 +62,7 @@ ol {
 .result__video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .search-form {
@@ -83,7 +83,6 @@ ol {
   align-items: center;
   gap: 5px;
   width: fit-content;
-  text-decoration: underline transparent;
   cursor: pointer;
 }
 
@@ -96,9 +95,11 @@ ol {
   text-decoration: underline;
 }
 
-input[type="checkbox"]:checked+span {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
+input[type="checkbox"]:checked+.search-form__pseudo-checkbox::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  padding: 2px;
   background-color: #FFF;
 }
 
@@ -142,6 +143,9 @@ input[type="checkbox"]:checked+span {
 }
 
 .search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 19px;
   height: 19px;
   border: 1px solid #fff;
@@ -170,8 +174,7 @@ input[type="checkbox"]:checked+span {
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  height: 34px;
+  min-height: 34px;
   border: 1px solid #FFF;
   color: #FFF;
   font-family: Fira Sans Condensed;
@@ -198,7 +201,7 @@ input[type="checkbox"]:checked+span {
 
 .button:focus-visible {
   outline: 1px solid #fff;
-  outline-offset: 1px;
+  outline-offset: -3px;
 }
 
 .search-form__submit-button {
@@ -208,7 +211,7 @@ input[type="checkbox"]:checked+span {
 
 .title {
   color: #FFF;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
   font-style: normal;
@@ -224,14 +227,16 @@ input[type="checkbox"]:checked+span {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 30px;
   overflow: auto;
   block-size: 298px;
-
 }
 
 .content__list-item {
   padding-top: 30px;
+}
+
+.content__list-item:first-child {
+  padding-top: 0;
 }
 
 .content__list-item:last-child {
@@ -273,7 +278,7 @@ input[type="checkbox"]:checked+span {
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   font-style: normal;
@@ -289,6 +294,7 @@ input[type="checkbox"]:checked+span {
   align-items: end;
   width: 193px;
   height: 103px;
+  object-fit: cover;
 }
 
 .content__card-link_current {
@@ -296,5 +302,5 @@ input[type="checkbox"]:checked+span {
 }
 
 .more-button {
-  width: 399px;
+  width: 100%;
 }
